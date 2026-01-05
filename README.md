@@ -37,56 +37,58 @@ sudo usermod -aG docker ubuntu
 
 
 After creating 3 ec2, rename the hostname :-
-
+```
 sudo hostnamectl set-hostname ds-master
 sudo hostnamectl set-hostname ds-w1
 sudo hostnamectl set-hostname ds-w2
-
+```
 
 
 
 Run the below command in Master : 
-
+```
 docker swarm init --advertise-addr 13.201.104.187
-
+```
 
 
 Paste the output command from Master in the 2 worker : 
-
+```
 docker swarm join --token SWMTKN-1-1ctuqs6jdk7to42albh25evjxggot3hpk5s90kqxb4xdln4ro5-9iy2cd9nkguo0kwu4xstmeqyx 13.201.104.187:2377
+```
 
-
-Allow 2377 port in master from the security group (CIDR x.x.x.x/32) 
+#Allow 2377 port in master from the security group (CIDR x.x.x.x/32) 
 
 
 
 Now from Mster, run the below command : 
 
-docker node ls
+```docker node ls```
 
 For Visualize :-
+```
 docker service create \
   --name=viz \
   --publish=8080:8080/tcp \
   --constraint=node.role==manager \
   --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
   dockersamples/visualizer
-
+```
 
 
 Provide the loan to the cluster :- 
+```
 docker service create \
   --name nginx-service \
   --publish published=80,target=80 \
   --replicas 3 \
   nginx:latest
+```
 
 
-
-docker service ls
+```docker service ls```
 
 
 
 
 Scale services dynamically:-
-sudo docker service scale nginx-service=5
+```sudo docker service scale nginx-service=5```
