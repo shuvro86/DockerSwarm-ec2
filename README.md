@@ -1,5 +1,7 @@
 ### Create the script named script.sh for User data
 
+Make 3 ec2 instance using the script which bootstrap Docker installation before startup :
+
 ```
 #!/bin/bash
 
@@ -73,7 +75,7 @@ docker service create \
 ```
 
 
-### Provide the loan to the cluster :- 
+### Provide the load to the cluster :- 
 ```
 docker service create \
   --name nginx-service \
