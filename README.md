@@ -1,4 +1,4 @@
-### Create the script named script.sh for User data
+### Create a script named script.sh for User data
 
 Make 3 ec2 instance using the script which bootstrap Docker installation before startup :
 
