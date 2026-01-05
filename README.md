@@ -85,10 +85,14 @@ docker service create \
 ```
 
 
-```docker service ls```
+```
+docker service ls
+```
 
 
 
 
 Scale services dynamically:-
-```sudo docker service scale nginx-service=5```
+```
+sudo docker service scale nginx-service=5
+```
