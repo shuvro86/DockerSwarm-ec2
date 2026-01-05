@@ -60,7 +60,7 @@ docker swarm join --token SWMTKN-1-1ctuqs6jdk7to42albh25evjxggot3hpk5s90kqxb4xdl
 
 
 
-Now from Mster, run the below command : 
+## Now from Master, run the below command : 
 
 ```docker node ls```
 
