@@ -1,5 +1,5 @@
-Create the script named script.sh for User data
-------------------------------------------------
+### Create the script named script.sh for User data
+
 ```
 #!/bin/bash
 
@@ -36,7 +36,7 @@ sudo usermod -aG docker ubuntu
 
 
 
-After creating 3 ec2, rename the hostname :-
+### After creating 3 ec2, rename the hostname :-
 ```
 sudo hostnamectl set-hostname ds-master
 sudo hostnamectl set-hostname ds-w1
@@ -45,26 +45,24 @@ sudo hostnamectl set-hostname ds-w2
 
 
 
-Run the below command in Master : 
+### Run the below command in Master : 
 ```
 docker swarm init --advertise-addr 13.201.104.187
 ```
 
 
-Paste the output command from Master in the 2 worker : 
+### Paste the output command from Master in the 2 worker : 
 ```
 docker swarm join --token SWMTKN-1-1ctuqs6jdk7to42albh25evjxggot3hpk5s90kqxb4xdln4ro5-9iy2cd9nkguo0kwu4xstmeqyx 13.201.104.187:2377
 ```
 
-# Allow 2377 port in master from the security group (CIDR x.x.x.x/32) 
+### Allow 2377 port in master from the security group (CIDR x.x.x.x/32) 
 
-
-
-## Now from Master, run the below command : 
+### Now from Master, run the below command : 
 
 ```docker node ls```
 
-For Visualize :-
+### For Visualize :-
 ```
 docker service create \
   --name=viz \
@@ -75,7 +73,7 @@ docker service create \
 ```
 
 
-Provide the loan to the cluster :- 
+### Provide the loan to the cluster :- 
 ```
 docker service create \
   --name nginx-service \
@@ -84,7 +82,7 @@ docker service create \
   nginx:latest
 ```
 
-
+### Check cluster :-
 ```
 docker service ls
 ```
@@ -92,7 +90,7 @@ docker service ls
 
 
 
-Scale services dynamically:-
+### Scale services dynamically:-
 ```
 sudo docker service scale nginx-service=5
 ```
