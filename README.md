@@ -56,7 +56,7 @@ Paste the output command from Master in the 2 worker :
 docker swarm join --token SWMTKN-1-1ctuqs6jdk7to42albh25evjxggot3hpk5s90kqxb4xdln4ro5-9iy2cd9nkguo0kwu4xstmeqyx 13.201.104.187:2377
 ```
 
-#Allow 2377 port in master from the security group (CIDR x.x.x.x/32) 
+# Allow 2377 port in master from the security group (CIDR x.x.x.x/32) 
 
 
 
