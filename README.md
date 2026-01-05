@@ -1,6 +1,6 @@
 Create the script named script.sh for User data
 ------------------------------------------------
-
+```
 #!/bin/bash
 
 
@@ -28,7 +28,7 @@ sudo systemctl enable --now docker
 # This avoids "permission denied" errors when you log in later
 
 sudo usermod -aG docker ubuntu
-
+```
 
 
 
